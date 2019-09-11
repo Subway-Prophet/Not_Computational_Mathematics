@@ -10,16 +10,6 @@ import java.awt.event.ActionListener;
         private JButton closeZoomButton;
         private JButton midZoomButton;
         private JButton farZoomButton;
-        private JButton generatePointsButton;
-        private JLabel Title;
-        private JLabel LeftLabel;
-        private JLabel RightLabel;
-        private JButton ZoomedButton;
-        private JButton standardViewButton;
-        private JButton fractalButton;
-        private JButton islandsButton;
-        private JButton connectedButton;
-        private JButton farViewButton;
 
         private static final int HEIGHT = 750;
         private static final int WIDTH = 750;
