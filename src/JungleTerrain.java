@@ -1,17 +1,11 @@
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.*;
 import java.util.Random;
 
-import com.sun.tools.javac.Main;
 public class JungleTerrain extends JPanel
 {
     private static final int WIDTH = 750;
     private static final int HEIGHT = 750;
-    int EXPO = 2;
-    double FEATURE_SIZE = 124;
 
     @Override
     public void paintComponent(Graphics g)
@@ -22,8 +16,8 @@ public class JungleTerrain extends JPanel
 
     private void doDrawing(Graphics g)
     {
-        EXPO = MainForm.MapType;
-        FEATURE_SIZE = MainForm.MapZoom;
+        int EXPO = MainForm.MapType;
+        double FEATURE_SIZE = MainForm.MapZoom;
         int seed = getRandomNumberInRange(420, 69696969);
         var g2d = (Graphics2D) g;
         OpenSimplexNoise noise = new OpenSimplexNoise(seed);
@@ -32,7 +26,7 @@ public class JungleTerrain extends JPanel
             for (int x = 0; x < WIDTH; x++)
             {
 
-                double e1 = 1 * noise.eval(1 * x / FEATURE_SIZE, 1* y / FEATURE_SIZE, 1.0);
+                double e1 = 1 * noise.eval(x / FEATURE_SIZE, y / FEATURE_SIZE, 1.0);
                 double e2 = 0.50 * noise.eval(2 * x / FEATURE_SIZE, 2 * y / FEATURE_SIZE, 1.0);
                 double e3 = 0.25 * noise.eval(4 * x / FEATURE_SIZE, 4 * y / FEATURE_SIZE, 0);
                 double e4 = 0.125 * noise.eval(6 * x / FEATURE_SIZE, 6 * y / FEATURE_SIZE, 1.0);
