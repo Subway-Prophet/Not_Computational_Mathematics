@@ -6,6 +6,7 @@ public class JungleTerrain extends JPanel
 {
     private static final int WIDTH = 750;
     private static final int HEIGHT = 750;
+    public boolean Island = false;
 
     @Override
     public void paintComponent(Graphics g)
@@ -18,7 +19,7 @@ public class JungleTerrain extends JPanel
     {
         int EXPO = MainForm.MapType;
         double FEATURE_SIZE = MainForm.MapZoom;
-        int seed = getRandomNumberInRange(420, 69696969);
+        int seed = getRandomNumberInRange(42, 69696969);
         var g2d = (Graphics2D) g;
         OpenSimplexNoise noise = new OpenSimplexNoise(seed);
         for (int y = 0; y < HEIGHT; y++)
@@ -42,6 +43,11 @@ public class JungleTerrain extends JPanel
                 {
                     elevation = -.99;
                 }
+                /**if (Island)
+                {
+
+                    elevation = (1 + elevation - distance)/ 2;
+                }**/
 
                 if (BiomeCheck.CheckBiome(elevation) == 0) //Ocean Drawing
                 {
