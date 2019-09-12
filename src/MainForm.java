@@ -10,6 +10,12 @@ import java.awt.event.ActionListener;
         private JButton closeZoomButton;
         private JButton midZoomButton;
         private JButton farZoomButton;
+        private JButton LowSeaButton;
+        private JButton oopsGlobalWarmingButton;
+        private JButton defaultSeaLevelButton;
+        private JButton button4;
+        private JButton button5;
+        private JButton button6;
 
         private static final int HEIGHT = 750;
         private static final int WIDTH = 750;
@@ -52,6 +58,30 @@ import java.awt.event.ActionListener;
                 public void actionPerformed(ActionEvent actionEvent)
                 {
                     MapZoom = 50;
+                }
+            });
+            LowSeaButton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent)
+                {
+                    BiomeCheck.SeaLevel = -0.5;
+                }
+            });
+            defaultSeaLevelButton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent)
+                {
+                    BiomeCheck.SeaLevel = 0.0;
+                }
+            });
+            oopsGlobalWarmingButton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent)
+                {
+                    BiomeCheck.SeaLevel = 0.5;
                 }
             });
         }
