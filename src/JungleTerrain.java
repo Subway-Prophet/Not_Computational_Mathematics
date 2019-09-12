@@ -48,121 +48,203 @@ public class JungleTerrain extends JPanel
 
                     elevation = (1 + elevation - distance)/ 2;
                 }**/
+                if (BiomeCheck.SeaLevel == 0.1)
+                {
 
-                if (BiomeCheck.CheckBiome(elevation) == 0) //Ocean Drawing
-                {
-                    int rgb = 0x0000FF * (int) (((elevation + 1)) * 127.5);
-                    Color Blue2 = new Color(rgb);
-                    g2d.setColor(Blue2);//sets color
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 1) //Beach Drawing
-                {
-                    if (getRandomNumberInRange(1,3) == 1)
+
+                    if (BiomeCheck.CheckBiome(elevation) == 0) //Ocean Drawing
                     {
-                        int rgb = 0xFFFF99;
-                        Color Blue2 = new Color(rgb);
-                        g2d.setColor(Blue2);
-                    }
-                    else
-                    {
-                        int rgb = 0xFFFFCC;
-                        Color Blue2 = new Color(rgb);
-                        g2d.setColor(Blue2);
-                    }
-                    //sets color
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 4 || //Rain forest painter
-                        BiomeCheck.CheckBiome(elevation) == 3 ||
-                        BiomeCheck.CheckBiome(elevation) == 2)
-                {
-                    int randomNumber = getRandomNumberInRange(1, 2);
-                    if (randomNumber == 1)
-                    {
-                        int rgb = 0x003300;
+                        int rgb = 0x0000FF * (int) (((elevation + 1)) * 127.5);
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
-                    }
-                    else
+                        g2d.drawLine(x, y, x, y);// draws point
+                    } else if (BiomeCheck.CheckBiome(elevation) == 1) //Beach Drawing
                     {
-                        int rgb = 0x006600;
+                        if (getRandomNumberInRange(1, 3) == 1) {
+                            int rgb = 0xFFFF99;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        } else {
+                            int rgb = 0xFFFFCC;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        //sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 4 || //Rain forest painter
+                            BiomeCheck.CheckBiome(elevation) == 3 ||
+                            BiomeCheck.CheckBiome(elevation) == 2)
+                    {
+                        int randomNumber = getRandomNumberInRange(1, 2);
+                        if (randomNumber == 1)
+                        {
+                            int rgb = 0x003300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        else
+                            {
+                            int rgb = 0x006600;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 5) {
+                        int randomNumber = getRandomNumberInRange(1, 2);
+                        if (randomNumber == 1) {
+                            int rgb = 0x193300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        } else {
+                            int rgb = 0x003300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 6) {
+                        int rgb = 0x202020;
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    } else if (BiomeCheck.CheckBiome(elevation) == 7) {
+                        int rgb = 0x404040;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    } else if (BiomeCheck.CheckBiome(elevation) == 8) {
+                        int rgb = 0xA0A0A0;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    } else if (BiomeCheck.CheckBiome(elevation) == 9) {
+                        int rgb = 0xf0ebeb;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    } else if (BiomeCheck.CheckBiome(elevation) == 10) {
+                        int rgb = 0xe3dede;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    } else if (BiomeCheck.CheckBiome(elevation) == 11)
+                    {
+                        int rgb = 0xf5e6e6;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    } else if (BiomeCheck.CheckBiome(elevation) == 12)
+                    {
+                        int rgb = 0xFFFFFF;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                }
+                else if (BiomeCheck.SeaLevel == -.5)
+                {
+                    if (BiomeCheck.CheckBiome(elevation) == 0) //Lake Drawing
+                    {
+                        int rgb = 0x0000FF * (int) (((elevation + 1)) * 127.5);
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 1) //Beach Drawing
+                    {
+                        if (getRandomNumberInRange(1, 3) == 1)
+                        {
+                            int rgb = 0xFFFF99;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        else
+                            {
+                            int rgb = 0xFFFFCC;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        //sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 6 ||
+                            BiomeCheck.CheckBiome(elevation) == 5 ||
+                            BiomeCheck.CheckBiome(elevation) == 4 || //Rain forest painter
+                            BiomeCheck.CheckBiome(elevation) == 3 ||
+                            BiomeCheck.CheckBiome(elevation) == 2)
+                    {
+                        int randomNumber = getRandomNumberInRange(1, 2);
+                        if (randomNumber == 1)
+                        {
+                            int rgb = 0x003300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        else
+                        {
+                            int rgb = 0x006600;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 7 ||
+                            BiomeCheck.CheckBiome(elevation) == 8 ||
+                            BiomeCheck.CheckBiome(elevation) == 9 ||
+                            BiomeCheck.CheckBiome(elevation) == 10 ||
+                            BiomeCheck.CheckBiome(elevation) == 11 ||
+                            BiomeCheck.CheckBiome(elevation) == 12)
+                    {
+                        int randomNumber = getRandomNumberInRange(1, 2);
+                        if (randomNumber == 1) {
+                            int rgb = 0x193300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        } else {
+                            int rgb = 0x003300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 13)
+                    {
+                            int rgb = 0x202020;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                            g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 14)
+                    {
+                        int rgb = 0xA0A0A0;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 15)
+                    {
+                        int rgb = 0xededed;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 16)
+                    {
+                        int rgb = 0xFFFFFF;
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
                     }
 
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 5)
-                {
-                    int randomNumber = getRandomNumberInRange(1, 2);
-                    if (randomNumber == 1)
-                    {
-                        int rgb = 0x193300;
-                        Color Blue2 = new Color(rgb);
-                        g2d.setColor(Blue2);//sets color
                     }
-                    else
-                    {
-                        int rgb = 0x003300;
-                        Color Blue2 = new Color(rgb);
-                        g2d.setColor(Blue2);//sets color
-                    }
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 6)
-                {
-                    int rgb = 0x202020;
-                    Color Blue2 = new Color(rgb);
-                    g2d.setColor(Blue2);//sets color
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 7)
-                {
-                    int rgb = 0x404040;
-                    Color Blue2 = new Color(rgb);
-                    g2d.setColor(Blue2);//sets color
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 8)
-                {
-                    int rgb = 0xA0A0A0;
-                    Color Blue2 = new Color(rgb);
-                    g2d.setColor(Blue2);//sets color
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 9)
-                {
-                    int rgb = 0xf0ebeb;
-                    Color Blue2 = new Color(rgb);
-                    g2d.setColor(Blue2);//sets color
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 10)
-                {
-                    int rgb = 0xe3dede;
-                    Color Blue2 = new Color(rgb);
-                    g2d.setColor(Blue2);//sets color
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 11)
-                {
-                    int rgb = 0xf5e6e6;
-                    Color Blue2 = new Color(rgb);
-                    g2d.setColor(Blue2);//sets color
-                    g2d.drawLine(x, y, x, y);// draws point
-                }
-                else if (BiomeCheck.CheckBiome(elevation) == 12)
-                {
-                    int rgb = 0xFFFFFF;
-                    Color Blue2 = new Color(rgb);
-                    g2d.setColor(Blue2);//sets color
-                    g2d.drawLine(x, y, x, y);// draws point
                 }
             }
         }
 
-    }
 
 
     private static int getRandomNumberInRange(int min, int max)

@@ -6,7 +6,7 @@ public class BiomeCheck
         {
             if (elevation < SeaLevel)
                 return 0;
-            else if (elevation < SeaLevel + .05)
+            else if (elevation < SeaLevel + .02)
                 return 1;
             else if (elevation < SeaLevel + .1)
                 return 2;
@@ -28,7 +28,15 @@ public class BiomeCheck
                 return 10;
             else if (elevation < SeaLevel + 1)
                 return 11;
-            else
+            else if (elevation < SeaLevel + 1.1)
                 return 12;
+            else if (elevation < SeaLevel + 1.2)
+                return 13;
+            else if (elevation < SeaLevel + 1.3)
+                return 14;
+            else if (elevation < SeaLevel + 1.4)
+                return 15;
+            else
+                return 16;
         }
 }

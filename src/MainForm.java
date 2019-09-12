@@ -73,7 +73,7 @@ import java.awt.event.ActionListener;
                 @Override
                 public void actionPerformed(ActionEvent actionEvent)
                 {
-                    BiomeCheck.SeaLevel = 0.0;
+                    BiomeCheck.SeaLevel = 0.1;
                 }
             });
             oopsGlobalWarmingButton.addActionListener(new ActionListener()
