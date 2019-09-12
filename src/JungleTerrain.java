@@ -7,6 +7,7 @@ public class JungleTerrain extends JPanel
     private static final int WIDTH = 750;
     private static final int HEIGHT = 750;
     public boolean Island = false;
+    public static boolean lava = false;
 
     @Override
     public void paintComponent(Graphics g)
@@ -52,13 +53,30 @@ public class JungleTerrain extends JPanel
                 {
 
 
-                    if (BiomeCheck.CheckBiome(elevation) == 0) //Ocean Drawing
+                    if (BiomeCheck.CheckBiome(elevation) == 0 && !lava) //Ocean Drawing
                     {
                         int rgb = 0x0000FF * (int) (((elevation + 1)) * 127.5);
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
                         g2d.drawLine(x, y, x, y);// draws point
-                    } else if (BiomeCheck.CheckBiome(elevation) == 1) //Beach Drawing
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 0 && lava) //Lava Drawing
+                    {
+                        if (getRandomNumberInRange(1, 3) == 1)
+                        {
+                            int rgb = 0xcf1020;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        else
+                        {
+                            int rgb = 0x9c2d25;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 1) //Beach Drawing
                     {
                         if (getRandomNumberInRange(1, 3) == 1) {
                             int rgb = 0xFFFF99;
@@ -144,13 +162,112 @@ public class JungleTerrain extends JPanel
                         g2d.drawLine(x, y, x, y);// draws point
                     }
                 }
-                else if (BiomeCheck.SeaLevel == -.5)
+                else if (BiomeCheck.SeaLevel == .5)
                 {
-                    if (BiomeCheck.CheckBiome(elevation) == 0) //Lake Drawing
+                    if (BiomeCheck.CheckBiome(elevation) == 0 && !lava) //Lake Drawing
                     {
                         int rgb = 0x0000FF * (int) (((elevation + 1)) * 127.5);
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 0 && lava) //Lava Drawing
+                    {
+                        if (getRandomNumberInRange(1, 3) == 1)
+                        {
+                            int rgb = 0xcf1020;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        else
+                        {
+                            int rgb = 0x9c2d25;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 1 ||BiomeCheck.CheckBiome(elevation) == 2) //Beach Drawing
+                    {
+                        if (getRandomNumberInRange(1, 3) == 1)
+                        {
+                            int rgb = 0xFFFF99;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        else
+                        {
+                            int rgb = 0xFFFFCC;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        //sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 6 ||
+                            BiomeCheck.CheckBiome(elevation) == 5 ||
+                            BiomeCheck.CheckBiome(elevation) == 4 || //Rain forest painter
+                            BiomeCheck.CheckBiome(elevation) == 3)
+                    {
+                        int randomNumber = getRandomNumberInRange(1, 2);
+                        if (randomNumber == 1)
+                        {
+                            int rgb = 0x003300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        else
+                        {
+                            int rgb = 0x006600;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 7 ||
+                            BiomeCheck.CheckBiome(elevation) == 8 ||
+                            BiomeCheck.CheckBiome(elevation) == 9 ||
+                            BiomeCheck.CheckBiome(elevation) == 10 ||
+                            BiomeCheck.CheckBiome(elevation) == 11 ||
+                            BiomeCheck.CheckBiome(elevation) == 12)
+                    {
+                        int randomNumber = getRandomNumberInRange(1, 2);
+                        if (randomNumber == 1) {
+                            int rgb = 0x193300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        } else {
+                            int rgb = 0x003300;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                }
+                else if (BiomeCheck.SeaLevel == -.5)
+                {
+                    if (BiomeCheck.CheckBiome(elevation) == 0 && !lava) //Lake Drawing
+                    {
+                        int rgb = 0x0000FF * (int) (((elevation + 1)) * 127.5);
+                        Color Blue2 = new Color(rgb);
+                        g2d.setColor(Blue2);//sets color
+                        g2d.drawLine(x, y, x, y);// draws point
+                    }
+                    else if (BiomeCheck.CheckBiome(elevation) == 0 && lava) //Lava Drawing
+                    {
+                        if (getRandomNumberInRange(1, 3) == 1)
+                        {
+                            int rgb = 0xcf1020;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
+                        else
+                        {
+                            int rgb = 0x9c2d25;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);
+                        }
                         g2d.drawLine(x, y, x, y);// draws point
                     }
                     else if (BiomeCheck.CheckBiome(elevation) == 1) //Beach Drawing
