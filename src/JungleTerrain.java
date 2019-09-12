@@ -133,6 +133,27 @@ public class JungleTerrain extends JPanel
                 }
                 else if (BiomeCheck.CheckBiome(elevation) == 9)
                 {
+                    int rgb = 0xf0ebeb;
+                    Color Blue2 = new Color(rgb);
+                    g2d.setColor(Blue2);//sets color
+                    g2d.drawLine(x, y, x, y);// draws point
+                }
+                else if (BiomeCheck.CheckBiome(elevation) == 10)
+                {
+                    int rgb = 0xe3dede;
+                    Color Blue2 = new Color(rgb);
+                    g2d.setColor(Blue2);//sets color
+                    g2d.drawLine(x, y, x, y);// draws point
+                }
+                else if (BiomeCheck.CheckBiome(elevation) == 11)
+                {
+                    int rgb = 0xf5e6e6;
+                    Color Blue2 = new Color(rgb);
+                    g2d.setColor(Blue2);//sets color
+                    g2d.drawLine(x, y, x, y);// draws point
+                }
+                else if (BiomeCheck.CheckBiome(elevation) == 12)
+                {
                     int rgb = 0xFFFFFF;
                     Color Blue2 = new Color(rgb);
                     g2d.setColor(Blue2);//sets color

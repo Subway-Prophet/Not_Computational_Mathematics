@@ -1,27 +1,34 @@
 
 public class BiomeCheck
 {
+    public static double SeaLevel = 0.1;
         public static int CheckBiome(Double elevation)
         {
-            if (elevation < 0.1)
+            if (elevation < SeaLevel)
                 return 0;
-            else if (elevation < 0.15)
+            else if (elevation < SeaLevel + .05)
                 return 1;
-            else if (elevation < 0.2)
+            else if (elevation < SeaLevel + .1)
                 return 2;
-            else if (elevation < 0.3)
+            else if (elevation < SeaLevel + .2)
                 return 3;
-            else if (elevation < 0.4)
+            else if (elevation < SeaLevel + .3)
                 return 4;
-            else if (elevation < 0.5)
+            else if (elevation < SeaLevel + .4)
                 return 5;
-            else if (elevation < 0.6)
+            else if (elevation < SeaLevel + .5)
                 return 6;
-            else if (elevation < 0.7)
+            else if (elevation < SeaLevel + .6)
                 return 7;
-            else if (elevation < 0.8)
+            else if (elevation < SeaLevel + .7)
                 return 8;
-            else
+            else if (elevation < SeaLevel + .8)
                 return 9;
+            else if (elevation < SeaLevel + .9)
+                return 10;
+            else if (elevation < SeaLevel + 1)
+                return 11;
+            else
+                return 12;
         }
 }
