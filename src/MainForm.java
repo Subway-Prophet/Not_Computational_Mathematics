@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
         private JButton defaultSeaLevelButton;
         private JButton button4;
         private JButton button5;
-        private JButton button6;
+        private JButton lavaButton;
 
         private static final int HEIGHT = 750;
         private static final int WIDTH = 750;
@@ -82,6 +82,17 @@ import java.awt.event.ActionListener;
                 public void actionPerformed(ActionEvent actionEvent)
                 {
                     BiomeCheck.SeaLevel = 0.5;
+                }
+            });
+            lavaButton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent)
+                {
+                    if (JungleTerrain.lava)
+                        JungleTerrain.lava = false;
+                    else
+                        JungleTerrain.lava = true;
                 }
             });
         }

@@ -62,17 +62,24 @@ public class JungleTerrain extends JPanel
                     }
                     else if (BiomeCheck.CheckBiome(elevation) == 0 && lava) //Lava Drawing
                     {
-                        if (getRandomNumberInRange(1, 3) == 1)
+                        int randomNumber = getRandomNumberInRange(1, 3);
+                        if (randomNumber == 1)
                         {
                             int rgb = 0xcf1020;
                             Color Blue2 = new Color(rgb);
-                            g2d.setColor(Blue2);
+                            g2d.setColor(Blue2);//sets color
                         }
-                        else
+                        else if (randomNumber == 2)
                         {
                             int rgb = 0x9c2d25;
                             Color Blue2 = new Color(rgb);
-                            g2d.setColor(Blue2);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        else if (randomNumber == 3)
+                        {
+                            int rgb = 0xed7e00;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
                         }
                         g2d.drawLine(x, y, x, y);// draws point
                     }
@@ -173,17 +180,24 @@ public class JungleTerrain extends JPanel
                     }
                     else if (BiomeCheck.CheckBiome(elevation) == 0 && lava) //Lava Drawing
                     {
-                        if (getRandomNumberInRange(1, 3) == 1)
+                        int randomNumber = getRandomNumberInRange(1, 3);
+                        if (randomNumber == 1)
                         {
                             int rgb = 0xcf1020;
                             Color Blue2 = new Color(rgb);
-                            g2d.setColor(Blue2);
+                            g2d.setColor(Blue2);//sets color
                         }
-                        else
+                        else if (randomNumber == 2)
                         {
                             int rgb = 0x9c2d25;
                             Color Blue2 = new Color(rgb);
-                            g2d.setColor(Blue2);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        else if (randomNumber == 3)
+                        {
+                            int rgb = 0xed7e00;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
                         }
                         g2d.drawLine(x, y, x, y);// draws point
                     }
@@ -256,17 +270,24 @@ public class JungleTerrain extends JPanel
                     }
                     else if (BiomeCheck.CheckBiome(elevation) == 0 && lava) //Lava Drawing
                     {
-                        if (getRandomNumberInRange(1, 3) == 1)
+                        int randomNumber = getRandomNumberInRange(1, 3);
+                        if (randomNumber == 1)
                         {
                             int rgb = 0xcf1020;
                             Color Blue2 = new Color(rgb);
-                            g2d.setColor(Blue2);
+                            g2d.setColor(Blue2);//sets color
                         }
-                        else
+                        else if (randomNumber == 2)
                         {
                             int rgb = 0x9c2d25;
                             Color Blue2 = new Color(rgb);
-                            g2d.setColor(Blue2);
+                            g2d.setColor(Blue2);//sets color
+                        }
+                        else if (randomNumber == 3)
+                        {
+                            int rgb = 0xed7e00;
+                            Color Blue2 = new Color(rgb);
+                            g2d.setColor(Blue2);//sets color
                         }
                         g2d.drawLine(x, y, x, y);// draws point
                     }

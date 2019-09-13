@@ -80,12 +80,12 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="a6dea" class="javax.swing.JButton" binding="button6" default-binding="true">
+      <component id="a6dea" class="javax.swing.JButton" binding="lavaButton" default-binding="true">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value=""/>
+          <text value="Lava"/>
         </properties>
       </component>
     </children>
