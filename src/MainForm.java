@@ -32,7 +32,7 @@ import java.awt.event.ActionListener;
                 {
                     JFrame frame1 = new JFrame("imageForm");
                     frame1.setSize(WIDTH, HEIGHT);
-                    frame1.add(new JungleTerrain());
+                    frame1.add(new RiverTest());
                     frame1.setVisible(true);
                 }
             });

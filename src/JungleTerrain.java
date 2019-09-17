@@ -52,7 +52,6 @@ public class JungleTerrain extends JPanel
                 if (BiomeCheck.SeaLevel == 0.1)
                 {
 
-
                     if (BiomeCheck.CheckBiome(elevation) == 0 && !lava) //Ocean Drawing
                     {
                         int rgb = 0x0000FF * (int) (((elevation + 1)) * 127.5);
@@ -117,40 +116,48 @@ public class JungleTerrain extends JPanel
 
                         g2d.drawLine(x, y, x, y);// draws point
                     }
-                    else if (BiomeCheck.CheckBiome(elevation) == 5) {
+                    else if (BiomeCheck.CheckBiome(elevation) == 5)
+                    {
                         int randomNumber = getRandomNumberInRange(1, 2);
-                        if (randomNumber == 1) {
+                        if (randomNumber == 1)
+                        {
                             int rgb = 0x193300;
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
-                        } else {
+                        } else
+                            {
                             int rgb = 0x003300;
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
                         }
                         g2d.drawLine(x, y, x, y);// draws point
                     }
-                    else if (BiomeCheck.CheckBiome(elevation) == 6) {
+                    else if (BiomeCheck.CheckBiome(elevation) == 6)
+                    {
                         int rgb = 0x202020;
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
                         g2d.drawLine(x, y, x, y);// draws point
-                    } else if (BiomeCheck.CheckBiome(elevation) == 7) {
+                    } else if (BiomeCheck.CheckBiome(elevation) == 7)
+                    {
                         int rgb = 0x404040;
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
                         g2d.drawLine(x, y, x, y);// draws point
-                    } else if (BiomeCheck.CheckBiome(elevation) == 8) {
+                    } else if (BiomeCheck.CheckBiome(elevation) == 8)
+                    {
                         int rgb = 0xA0A0A0;
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
                         g2d.drawLine(x, y, x, y);// draws point
-                    } else if (BiomeCheck.CheckBiome(elevation) == 9) {
+                    } else if (BiomeCheck.CheckBiome(elevation) == 9)
+                    {
                         int rgb = 0xf0ebeb;
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
                         g2d.drawLine(x, y, x, y);// draws point
-                    } else if (BiomeCheck.CheckBiome(elevation) == 10) {
+                    } else if (BiomeCheck.CheckBiome(elevation) == 10)
+                    {
                         int rgb = 0xe3dede;
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
@@ -168,6 +175,7 @@ public class JungleTerrain extends JPanel
                         g2d.setColor(Blue2);//sets color
                         g2d.drawLine(x, y, x, y);// draws point
                     }
+
                 }
                 else if (BiomeCheck.SeaLevel == .5)
                 {
@@ -338,11 +346,13 @@ public class JungleTerrain extends JPanel
                             BiomeCheck.CheckBiome(elevation) == 12)
                     {
                         int randomNumber = getRandomNumberInRange(1, 2);
-                        if (randomNumber == 1) {
+                        if (randomNumber == 1)
+                        {
                             int rgb = 0x193300;
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
-                        } else {
+                        } else
+                            {
                             int rgb = 0x003300;
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
