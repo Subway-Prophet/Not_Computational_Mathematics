@@ -123,13 +123,18 @@ public class RiverTest extends JPanel
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
                         }
-                        if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 1)
+                        if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 5)
                         {
                             int rgb = 0x0000FF;
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
                             Rivers = Rivers + 1;
-                            River river = new River(x, y);
+                            //River Finding Code.
+                            int arrX[];
+                            arrX = new int[30];
+                            int arrY[];
+                            arrY = new int[30];
+                            River river = new River(x, y, arrX,arrY);
                         }
                         g2d.drawLine(x, y, x, y);// draws point
                     } else if (BiomeCheck.CheckBiome(elevation) == 6) {
