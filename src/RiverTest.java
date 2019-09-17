@@ -30,14 +30,7 @@ public class RiverTest extends JPanel
 
     private void doDrawing(Graphics g)
     {
-        int Rivers = 5;
-        int [] River1;
-        River1 = new int[2];
-        int [] River2;
-        int [] River3;
-        int [] River4;
-        int [] River5;
-
+        int Rivers = 0;
 
         int EXPO = MainForm.MapType;
         double FEATURE_SIZE = MainForm.MapZoom;
@@ -130,35 +123,13 @@ public class RiverTest extends JPanel
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
                         }
-                        if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers > 0) {
+                        if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 1)
+                        {
                             int rgb = 0x0000FF;
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
-                            Rivers = Rivers - 1;
-                            if (Rivers == 4) {
-                                River1[0] = x;
-                                River1[1] = y;
-                            }
-                            if (Rivers == 3) {
-                                River2 = new int[2];
-                                River2[0] = x;
-                                River2[1] = y;
-                            }
-                            if (Rivers == 2) {
-                                River3 = new int[2];
-                                River3[0] = x;
-                                River3[1] = y;
-                            }
-                            if (Rivers == 1) {
-                                River4 = new int[2];
-                                River4[0] = x;
-                                River4[1] = y;
-                            }
-                            if (Rivers == 0) {
-                                River5 = new int[2];
-                                River5[0] = x;
-                                River5[1] = y;
-                            }
+                            Rivers = Rivers + 1;
+                            River river = new River(x, y);
                         }
                         g2d.drawLine(x, y, x, y);// draws point
                     } else if (BiomeCheck.CheckBiome(elevation) == 6) {
@@ -201,42 +172,6 @@ public class RiverTest extends JPanel
                 }
             }
         }
-            if (Rivers == 4)
-            {
-                int startX = River1[0];
-                int startY = River1[1];
-                for (int y = 0; y < HEIGHT; y++)
-                {
-                    for (int x = 0; x < WIDTH; x++)
-                    {
-
-                        double e1 = 1 * noise.eval(x / FEATURE_SIZE, y / FEATURE_SIZE, 1.0);
-                        double e2 = 0.50 * noise.eval(2 * x / FEATURE_SIZE, 2 * y / FEATURE_SIZE, 1.0);
-                        double e3 = 0.25 * noise.eval(4 * x / FEATURE_SIZE, 4 * y / FEATURE_SIZE, 0);
-                        double e4 = 0.125 * noise.eval(6 * x / FEATURE_SIZE, 6 * y / FEATURE_SIZE, 1.0);
-                        double e5 = 0.05125 * noise.eval(8 * x / FEATURE_SIZE, 8 * y / FEATURE_SIZE, 1.0);
-                        double e6 = 0.02505125 * noise.eval(10 * x / FEATURE_SIZE, 8 * y / FEATURE_SIZE, 1.0);
-
-                        double elevation = Math.pow((e1 + e2 + e3 + e4 + e5 + e6), EXPO);
-                        if (elevation > .99)
-                        {
-                            elevation = .99;
-                        }
-                        if (elevation < -.99)
-                        {
-                            elevation = -.99;
-                        }
-                        //if (x == startX - 1 || x == startX + 1 && y == startY && elevation < CheckPoint(startX, startY))
-                        {
-
-                        }
-
-                    }
-                }
-
-            }
-
-
     }
 }
 
