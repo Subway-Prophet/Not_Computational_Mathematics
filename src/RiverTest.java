@@ -2,25 +2,23 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-public class RiverTest extends JPanel
-{
+public class RiverTest extends JPanel {
     private static final int WIDTH = 750;
     private static final int HEIGHT = 750;
     public boolean Island = false;
     public static boolean lava = false;
+    public static int[] RiverPathX;
+    public static int[] RiverPathY;
 
     @Override
-    public void paintComponent(Graphics g)
-    {
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         doDrawing(g);
     }
 
-    private static int getRandomNumberInRange(int min, int max)
-    {
+    private static int getRandomNumberInRange(int min, int max) {
 
-        if (min >= max)
-        {
+        if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");
         }
 
@@ -28,13 +26,12 @@ public class RiverTest extends JPanel
         return r.nextInt((max - min) + 1) + min;
     }
 
-    private void doDrawing(Graphics g)
-    {
+    private void doDrawing(Graphics g) {
         int Rivers = 0;
 
         int EXPO = MainForm.MapType;
         double FEATURE_SIZE = MainForm.MapZoom;
-        int seed =69;
+        int seed = 69;
         var g2d = (Graphics2D) g;
         OpenSimplexNoise noise = new OpenSimplexNoise(seed);
         for (int y = 0; y < HEIGHT; y++) {
@@ -123,19 +120,16 @@ public class RiverTest extends JPanel
                             Color Blue2 = new Color(rgb);
                             g2d.setColor(Blue2);//sets color
                         }
-                        if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 5)
-                        {
-                            int rgb = 0x0000FF;
-                            Color Blue2 = new Color(rgb);
-                            g2d.setColor(Blue2);//sets color
-                            Rivers = Rivers + 1;
-                            //River Finding Code.
-                            int arrX[];
-                            arrX = new int[30];
-                            int arrY[];
-                            arrY = new int[30];
-                            River river = new River(x, y, arrX,arrY);
-                        }
+                        /**if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 1)
+                         {
+                         int rgb = 0x0000FF;
+                         Color Blue2 = new Color(rgb);
+                         g2d.setColor(Blue2);//sets color
+                         Rivers = Rivers + 1;
+                         FindRiver(x, y, seed, FeatureSize);
+                         RiverPathX = new int[50];
+                         RiverPathY = new int[50];
+                         }**/
                         g2d.drawLine(x, y, x, y);// draws point
                     } else if (BiomeCheck.CheckBiome(elevation) == 6) {
                         int rgb = 0x202020;
@@ -177,6 +171,41 @@ public class RiverTest extends JPanel
                 }
             }
         }
-    }
-}
+        for (int y = 0; y < HEIGHT; y++)
+        {
+            for (int x = 0; x < WIDTH; x++)
+            {
 
+                double e1 = 1 * noise.eval(x / FEATURE_SIZE, y / FEATURE_SIZE, 1.0);
+                double e2 = 0.50 * noise.eval(2 * x / FEATURE_SIZE, 2 * y / FEATURE_SIZE, 1.0);
+                double e3 = 0.25 * noise.eval(4 * x / FEATURE_SIZE, 4 * y / FEATURE_SIZE, 0);
+                double e4 = 0.125 * noise.eval(6 * x / FEATURE_SIZE, 6 * y / FEATURE_SIZE, 1.0);
+                double e5 = 0.05125 * noise.eval(8 * x / FEATURE_SIZE, 8 * y / FEATURE_SIZE, 1.0);
+                double e6 = 0.02505125 * noise.eval(10 * x / FEATURE_SIZE, 8 * y / FEATURE_SIZE, 1.0);
+
+                double elevation = Math.pow((e1 + e2 + e3 + e4 + e5 + e6), EXPO);
+                if (elevation > .99)
+                {
+                    elevation = .99;
+                }
+                if (elevation < -.99)
+                {
+                    elevation = -.99;
+                }
+                if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 5)
+                {
+                    int rgb = 0x0000FF;
+                    Color Blue2 = new Color(rgb);
+                    g2d.setColor(Blue2);//sets color
+                    Rivers = Rivers + 1;
+                    RiverPathX = new int[50];
+                    RiverPathY = new int[50];
+                    g2d.drawLine(x, y, x, y);// draws point
+
+                }
+
+            }
+        }
+    }
+
+}
