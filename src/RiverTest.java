@@ -170,7 +170,7 @@ public class RiverTest extends JPanel {
             for (int x = 0; x < WIDTH; x++)
             {
                 double elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 1)
+                if (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 5)
                 {
                     boolean riverEnd = false;
                     int rgb = 0x0000FF;
@@ -183,24 +183,28 @@ public class RiverTest extends JPanel {
                     System.out.println("Calculating River...");
                     while (!riverEnd)
                     {
-                            if (getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) < elevation)
+                            if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y + 1)
+                            && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y))
                             {
                                 x = x - 1;
                                 g2d.drawLine(x, y, x, y);
                                 elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                                System.out.println("I really hope this isn't an endless loop");
+                                System.out.println(elevation);
                                 if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
                                 {
                                     System.out.println("You shouldn't be able to see this ");
                                     riverEnd = true;
                                 }
                             }
-                            else if (getElevation(seed, EXPO, FEATURE_SIZE, x, y + 1) < elevation)
+                            else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y))
                             {
                                 y = y + 1;
                                 g2d.drawLine(x, y, x, y);
                                 elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                                System.out.println("I really hope this isn't an endless loop");
+                                System.out.println(elevation);
                                 if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
                                 {
                                     System.out.println("You shouldn't be able to see this ");
@@ -208,12 +212,14 @@ public class RiverTest extends JPanel {
                                     riverEnd = true;
                                 }
                             }
-                            else if (getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y) < elevation)
+                            else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1 , y ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1 , y ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1 , y ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1))
                             {
                                 x = x+ 1;
                                 g2d.drawLine(x, y, x, y);
                                 elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                                System.out.println("I really hope this isn't an endless loop");
+                                System.out.println(elevation);
                                 if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
                                 {
                                     System.out.println("You shouldn't be able to see this ");
@@ -226,59 +232,7 @@ public class RiverTest extends JPanel {
                                 y = y - 1;
                                 g2d.drawLine(x, y, x, y);
                                 elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                                System.out.println("I really hope this isn't an endless loop");
-                                if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
-                                {
-                                    System.out.println("You shouldn't be able to see this ");
-
-                                    riverEnd = true;
-                                }
-                            }
-                            else if (getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1) == elevation)
-                            {
-                                y = y - 1;
-                                g2d.drawLine(x, y, x, y);
-                                elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                                System.out.println("I really hope this isn't an endless loop");
-                                if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
-                                {
-                                    System.out.println("You shouldn't be able to see this ");
-
-                                    riverEnd = true;
-                                }
-                            }
-                            else if (getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) == elevation)
-                            {
-                                x = x - 1;
-                                g2d.drawLine(x, y, x, y);
-                                elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                                System.out.println("I really hope this isn't an endless loop");
-                                if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
-                                {
-                                    System.out.println("You shouldn't be able to see this ");
-
-                                    riverEnd = true;
-                                }
-                            }
-                            else if (getElevation(seed, EXPO, FEATURE_SIZE, x, y + 1) == elevation)
-                            {
-                                y = y + 1;
-                                g2d.drawLine(x, y, x, y);
-                                elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                                System.out.println("I really hope this isn't an endless loop");
-                                if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
-                                {
-                                    System.out.println("You shouldn't be able to see this ");
-
-                                    riverEnd = true;
-                                }
-                            }
-                            else if (getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y) == elevation)
-                            {
-                                x = x + 1;
-                                g2d.drawLine(x, y, x, y);
-                                elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
-                                System.out.println("I really hope this isn't an endless loop");
+                                System.out.println(elevation);
                                 if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
                                 {
                                     System.out.println("You shouldn't be able to see this ");
