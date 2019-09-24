@@ -2,7 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-public class RiverTest extends JPanel {
+public class RiverTest extends JPanel
+{
     private static final int WIDTH = 750;
     private static final int HEIGHT = 750;
     public boolean Island = false;
@@ -11,12 +12,14 @@ public class RiverTest extends JPanel {
     public static int[] RiverPathY;
 
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g)
+    {
         super.paintComponent(g);
         doDrawing(g);
     }
 
-    private static int getRandomNumberInRange(int min, int max) {
+    private static int getRandomNumberInRange(int min, int max)
+    {
 
         if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");
