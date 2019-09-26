@@ -188,7 +188,11 @@ public class RiverTest extends JPanel
                     {
                             if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y + 1)
                             && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1)
-                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y))
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y)
+                            && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1))
                             {
                                 x = x - 1;
                                 g2d.drawLine(x, y, x, y);
@@ -202,7 +206,11 @@ public class RiverTest extends JPanel
                             }
                             else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
                                     && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1)
-                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y))
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1))
                             {
                                 y = y + 1;
                                 g2d.drawLine(x, y, x, y);
@@ -217,7 +225,11 @@ public class RiverTest extends JPanel
                             }
                             else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1 , y ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
                                     && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1 , y ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1)
-                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1 , y ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1))
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1 , y ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1))
                             {
                                 x = x+ 1;
                                 g2d.drawLine(x, y, x, y);
@@ -230,7 +242,13 @@ public class RiverTest extends JPanel
                                     riverEnd = true;
                                 }
                             }
-                            else if (getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1) < elevation)
+                            else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x  , y -1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y -1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y -1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y -1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1))
                             {
                                 y = y - 1;
                                 g2d.drawLine(x, y, x, y);
@@ -242,6 +260,93 @@ public class RiverTest extends JPanel
 
                                     riverEnd = true;
                                 }
+                            }
+
+                            else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1  , y -1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x -1, y -1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x -1, y -1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x -1, y -1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x -1, y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1))
+                            {
+                                y = y - 1;
+                                x = x - 1;
+                                g2d.drawLine(x, y, x, y);
+                                elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
+                                System.out.println(elevation);
+                                if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
+                                {
+                                    System.out.println("You shouldn't be able to see this ");
+
+                                    riverEnd = true;
+                                }
+                            }
+                            else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1  , y +1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x -1, y + 1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x -1, y + 1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x -1, y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x -1, y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1))
+                            {
+                                y = y + 1;
+                                x = x - 1;
+                                g2d.drawLine(x, y, x, y);
+                                elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
+                                System.out.println(elevation);
+                                if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
+                                {
+                                    System.out.println("You shouldn't be able to see this ");
+
+                                    riverEnd = true;
+                                }
+                            }
+
+                            else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1  , y +1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1))
+                            {
+                                y = y + 1;
+                                x = x + 1;
+                                g2d.drawLine(x, y, x, y);
+                                elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
+                                System.out.println(elevation);
+                                if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
+                                {
+                                    System.out.println("You shouldn't be able to see this ");
+
+                                    riverEnd = true;
+                                }
+                            }
+                            else if (elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1  , y - 1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x , y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1 ) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x - 1, y - 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y + 1)
+                                    && elevation - getElevation(seed, EXPO, FEATURE_SIZE, x + 1, y - 1) > elevation - getElevation(seed, EXPO, FEATURE_SIZE, x, y - 1))
+                            {
+                                y = y - 1;
+                                x = x + 1;
+                                g2d.drawLine(x, y, x, y);
+                                elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x , y));
+                                System.out.println(elevation);
+                                if (getElevation(seed, EXPO, FEATURE_SIZE, x, y) < 0.1)
+                                {
+                                    System.out.println("You shouldn't be able to see this ");
+
+                                    riverEnd = true;
+                                }
+                            }
+
+                            else
+                            {
+                                riverEnd = true;
                             }
                         }
                     y = SaveY;

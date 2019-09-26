@@ -17,10 +17,11 @@ import java.awt.event.ActionListener;
         private JButton button5;
         private JButton lavaButton;
 
-        private static final int HEIGHT = 750;
-        private static final int WIDTH = 750;
+        private static final int HEIGHT = 920;
+        private static final int WIDTH = 1920;
         public static double MapZoom = 124;
         public static int MapType = 1;
+        public static boolean RiverToggle = false;
 
 
         public MainForm()
@@ -32,8 +33,16 @@ import java.awt.event.ActionListener;
                 {
                     JFrame frame1 = new JFrame("imageForm");
                     frame1.setSize(WIDTH, HEIGHT);
-                    frame1.add(new RiverTest());
-                    frame1.setVisible(true);
+                    if (RiverToggle)
+                    {
+                        frame1.add(new RiverTest());
+                        frame1.setVisible(true);
+                    }
+                    else
+                    {
+                        frame1.add(new JungleTerrain());
+                        frame1.setVisible(true);
+                    }
                 }
             });
             closeZoomButton.addActionListener(new ActionListener()
@@ -93,6 +102,17 @@ import java.awt.event.ActionListener;
                         JungleTerrain.lava = false;
                     else
                         JungleTerrain.lava = true;
+                }
+            });
+            button5.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent)
+                {
+                    if (RiverToggle)
+                    RiverToggle = false;
+                    else
+                        RiverToggle = true;
                 }
             });
         }
