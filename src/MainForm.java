@@ -32,7 +32,7 @@ import java.awt.event.ActionListener;
                 public void actionPerformed(ActionEvent actionEvent)
                 {
                     JFrame frame1 = new JFrame("imageForm");
-                    frame1.setSize(WIDTH, HEIGHT);
+                    frame1.setExtendedState(JFrame.MAXIMIZED_BOTH);
                     if (RiverToggle)
                     {
                         frame1.add(new RiverTest());
@@ -123,7 +123,7 @@ import java.awt.event.ActionListener;
             frame.setContentPane(new MainForm().RootPanel);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
-            frame.setSize(WIDTH, HEIGHT);
+            frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
             frame.setVisible(true);
         }
 

@@ -269,6 +269,7 @@ public class JungleTerrain extends JPanel
                 }
                 else if (BiomeCheck.SeaLevel == -.5)
                 {
+
                     if (BiomeCheck.CheckBiome(elevation) == 0 && !lava) //Lake Drawing
                     {
                         int rgb = 0x0000FF * (int) (((elevation + 1)) * 127.5);
