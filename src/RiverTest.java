@@ -412,7 +412,7 @@ public class RiverTest extends JPanel
                 {
                     double elevation = (getElevation(seed, EXPO, FEATURE_SIZE, x, y));
                     if
-                    (getRandomNumberInRange(1, 1000) == 69 && elevation >= .49 && elevation < .5 && Rivers < 30)
+                    (getRandomNumberInRange(1, 1000) == 69 && elevation >= (.59) && elevation < (.6) && Rivers < 30)
                     {
                         double lastElevation = 0;
                         boolean riverEnd = false;

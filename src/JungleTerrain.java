@@ -44,11 +44,21 @@ public class JungleTerrain extends JPanel
                 {
                     elevation = -.99;
                 }
-                /**if (Island)
+                if (Island)
                 {
+                    double distance = calculateDistanceBetweenPointsWithHypot(x, y, 900, 450);
+                    double NewValue;
+                    double OldRange = (1004.8 - 0);
+                    if (OldRange == 0)
+                        NewValue = -.99;
+                    else
+                    {
+                        double NewRange = (0.99 - -.99);
+                        NewValue = (((distance - 0) * NewRange) / OldRange) + -.99;
+                    }
 
-                    elevation = (1 + elevation - distance)/ 2;
-                }**/
+                    elevation = (1 + elevation - NewValue)/ 2;
+                }
                 if (BiomeCheck.SeaLevel == 0.1)
                 {
 
@@ -406,5 +416,13 @@ public class JungleTerrain extends JPanel
 
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
+    }
+    public double calculateDistanceBetweenPointsWithHypot(double x1, double y1, double x2, double y2)
+    {
+
+        double ac = Math.abs(y2 - y1);
+        double cb = Math.abs(x2 - x1);
+
+        return Math.hypot(ac, cb);
     }
 }
