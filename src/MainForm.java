@@ -13,9 +13,10 @@ import java.awt.event.ActionListener;
         private JButton LowSeaButton;
         private JButton oopsGlobalWarmingButton;
         private JButton defaultSeaLevelButton;
-        private JButton button4;
+        private JButton islandUnstableButton;
         private JButton button5;
         private JButton lavaButton;
+        public static boolean IslandToggle = false;
 
         private static final int HEIGHT = 920;
         private static final int WIDTH = 1920;
@@ -38,8 +39,13 @@ import java.awt.event.ActionListener;
                         frame1.add(new RiverTest());
                         frame1.setVisible(true);
                     }
-                    else
+                    else if (IslandToggle)
                     {
+                        frame1.add(new Island());
+                        frame1.setVisible(true);
+                    }
+                    else
+                        {
                         frame1.add(new JungleTerrain());
                         frame1.setVisible(true);
                     }
@@ -111,8 +117,23 @@ import java.awt.event.ActionListener;
                 {
                     if (RiverToggle)
                     RiverToggle = false;
+                    else if (IslandToggle)
+                        IslandToggle = false;
                     else
                         RiverToggle = true;
+                }
+            });
+            islandUnstableButton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent)
+                {
+                    if (IslandToggle)
+                        IslandToggle = false;
+                    else if (RiverToggle)
+                        RiverToggle = false;
+                    else
+                        IslandToggle = true;
                 }
             });
         }
