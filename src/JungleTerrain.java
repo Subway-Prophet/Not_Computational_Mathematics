@@ -6,7 +6,7 @@ public class JungleTerrain extends JPanel
 {
     private static final int WIDTH = 1800;
     private static final int HEIGHT = 900;
-    public boolean Island = true;
+    public boolean Island = false;
     public static boolean lava = false;
 
     @Override
