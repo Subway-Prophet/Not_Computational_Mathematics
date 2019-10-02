@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
         private JButton lavaButton;
         public static boolean IslandToggle = false;
 
-        private static final int HEIGHT = 920;
+        private static final int HEIGHT = 920; // yeet
         private static final int WIDTH = 1920;
         public static double MapZoom = 124;
         public static int MapType = 1;
