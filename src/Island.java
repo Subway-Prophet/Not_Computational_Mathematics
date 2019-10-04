@@ -47,9 +47,8 @@ public class Island extends JPanel
                     double distance = calculateDistanceBetweenPointsWithHypot(x, y, 900, 450);
                     double NewValue;
                     double OldRange = (1004.8 - 0);
-                    NewValue = -.99;
-                    double NewRange = (0.99 - -.99);
-                    NewValue = (((distance - 0) * NewRange) / OldRange) + -.99;
+                    double NewRange = (0.99 - -.69);
+                    NewValue = (((distance - 0) * NewRange) / OldRange) + -.69;
 
                     elevation = (1 + elevation - NewValue)/ 2;
                 if (BiomeCheck.SeaLevel == 0.1)
