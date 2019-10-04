@@ -1,7 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
 import java.util.Random;
-
 public class Island extends JPanel
 {
     private static final int WIDTH = 1800;
@@ -19,7 +18,7 @@ public class Island extends JPanel
     private void doDrawing(Graphics g)
     {
         int EXPO = MainForm.MapType;
-        double FEATURE_SIZE = 64;
+        double FEATURE_SIZE = MainForm.MapZoom;
         int seed = getRandomNumberInRange(42, 69696969);
         var g2d = (Graphics2D) g;
         OpenSimplexNoise noise = new OpenSimplexNoise(seed);
@@ -184,7 +183,9 @@ public class Island extends JPanel
             }
         }
     }
-
+    //Get your money for nothin' and your chicks for free
+    // I want my I want my I want my I want my MTV
+    //*Bongo*
 
 
     private static int getRandomNumberInRange(int min, int max)
