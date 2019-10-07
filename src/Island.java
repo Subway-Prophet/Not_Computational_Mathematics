@@ -19,7 +19,7 @@ public class Island extends JPanel
     {
         int EXPO = MainForm.MapType;
         double FEATURE_SIZE = MainForm.MapZoom;
-        int seed = getRandomNumberInRange(42, 69696969);
+        int seed = MainForm.seed;
         var g2d = (Graphics2D) g;
         OpenSimplexNoise noise = new OpenSimplexNoise(seed);
         for (int y = 0; y < HEIGHT; y++)

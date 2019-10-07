@@ -56,7 +56,7 @@ public class RiverTest extends JPanel
     private void doDrawing(Graphics g)
     {
         int Rivers = 0;
-        int seed = 69;
+        int seed = MainForm.seed;
         int EXPO = MainForm.MapType;
         double FEATURE_SIZE = MainForm.MapZoom;
         var g2d = (Graphics2D) g;

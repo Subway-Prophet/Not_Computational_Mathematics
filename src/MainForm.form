@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainForm">
-  <grid id="27dc6" binding="RootPanel" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="RootPanel" layout-manager="GridLayoutManager" row-count="8" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -10,82 +10,66 @@
     <children>
       <component id="d33dc" class="javax.swing.JButton" binding="generateMapButton" default-binding="true">
         <constraints>
-          <grid row="3" column="0" row-span="2" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="2" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Generate Map"/>
         </properties>
       </component>
-      <component id="6be47" class="javax.swing.JButton" binding="LowSeaButton">
+      <component id="202e6" class="javax.swing.JSlider" binding="ZoomSlider">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="14204" class="javax.swing.JLabel" binding="TitleLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Low Sea Level"/>
+          <text value="Map Generator"/>
         </properties>
       </component>
-      <component id="26773" class="javax.swing.JButton" binding="oopsGlobalWarmingButton" default-binding="true">
+      <component id="d1582" class="javax.swing.JTextArea" binding="SeedEnter">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
         </constraints>
         <properties>
-          <text value="Oops, Global Warming"/>
+          <text value="Enter Seed"/>
         </properties>
       </component>
-      <component id="3264d" class="javax.swing.JButton" binding="defaultSeaLevelButton" default-binding="true">
+      <component id="8a356" class="javax.swing.JLabel">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Default Sea Level"/>
+          <text value="Zoom"/>
         </properties>
       </component>
-      <component id="80dd9" class="javax.swing.JButton" binding="closeZoomButton" default-binding="true">
+      <component id="7cb89" class="javax.swing.JCheckBox" binding="islandCheckBox" default-binding="true">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Close Zoom"/>
+          <text value="Island"/>
         </properties>
       </component>
-      <component id="a2f1b" class="javax.swing.JButton" binding="midZoomButton" default-binding="true">
+      <component id="72200" class="javax.swing.JCheckBox" binding="lavaCheckBox" default-binding="true">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Mid Zoom"/>
-        </properties>
-      </component>
-      <component id="ecede" class="javax.swing.JButton" binding="farZoomButton" default-binding="true">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Far Zoom"/>
-        </properties>
-      </component>
-      <component id="cbd46" class="javax.swing.JButton" binding="islandUnstableButton" default-binding="true">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Island (Unstable)"/>
-        </properties>
-      </component>
-      <component id="5c125" class="javax.swing.JButton" binding="button5" default-binding="true">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Rivers (Unstable)"/>
-        </properties>
-      </component>
-      <component id="a6dea" class="javax.swing.JButton" binding="lavaButton" default-binding="true">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Lava"/>
+        </properties>
+      </component>
+      <component id="b52e6" class="javax.swing.JCheckBox" binding="riversCheckBox" default-binding="true">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Rivers"/>
         </properties>
       </component>
     </children>

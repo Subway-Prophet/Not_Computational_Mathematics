@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 
-    public class MainForm
+public class MainForm
     {
         private JPanel RootPanel;
         private JButton generateMapButton;
@@ -16,13 +17,19 @@ import java.awt.event.ActionListener;
         private JButton islandUnstableButton;
         private JButton button5;
         private JButton lavaButton;
-        public static boolean IslandToggle = false;
+        private JCheckBox islandCheckBox;
+        private JCheckBox riversCheckBox;
+        private JCheckBox lavaCheckBox;
+        private JSlider ZoomSlider;
+        private JLabel TitleLabel;
+        private JTextArea SeedEnter;
 
-        private static final int HEIGHT = 920; // yeet
-        private static final int WIDTH = 1920;
+        public static boolean IslandToggle = false;
         public static double MapZoom = 124;
         public static int MapType = 1;
         public static boolean RiverToggle = false;
+        public static boolean Lava = false;
+        public static int seed = 0;
 
 
         public MainForm()
@@ -34,6 +41,10 @@ import java.awt.event.ActionListener;
                 {
                     JFrame frame1 = new JFrame("imageForm");
                     frame1.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                    if (seed != 0)
+                    {
+                        seed = getRandomNumberInRange(42, 69696969);
+                    }
                     if (RiverToggle)
                     {
                         frame1.add(new RiverTest());
@@ -51,89 +62,39 @@ import java.awt.event.ActionListener;
                     }
                 }
             });
-            closeZoomButton.addActionListener(new ActionListener()
+            lavaCheckBox.addActionListener(new ActionListener()
             {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent)
                 {
-                    MapZoom = 324;
-                }
-            });
-            midZoomButton.addActionListener(new ActionListener()
-            {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent)
-                {
-                    MapZoom = 124;
-                }
-            });
-            farZoomButton.addActionListener(new ActionListener()
-            {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent)
-                {
-                    MapZoom = 50;
-                }
-            });
-            LowSeaButton.addActionListener(new ActionListener()
-            {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent)
-                {
-                    BiomeCheck.SeaLevel = -0.5;
-                }
-            });
-            defaultSeaLevelButton.addActionListener(new ActionListener()
-            {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent)
-                {
-                    BiomeCheck.SeaLevel = 0.1;
-                }
-            });
-            oopsGlobalWarmingButton.addActionListener(new ActionListener()
-            {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent)
-                {
-                    BiomeCheck.SeaLevel = 0.5;
-                }
-            });
-            lavaButton.addActionListener(new ActionListener()
-            {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent)
-                {
-                    if (JungleTerrain.lava)
-                        JungleTerrain.lava = false;
+                    if (!Lava)
+
+                         Lava = true;
                     else
-                        JungleTerrain.lava = true;
+                        Lava = false;
+
                 }
             });
-            button5.addActionListener(new ActionListener()
-            {
-                @Override
-                public void actionPerformed(ActionEvent actionEvent)
-                {
-                    if (RiverToggle)
-                    RiverToggle = false;
-                    else if (IslandToggle)
-                        IslandToggle = false;
-                    else
-                        RiverToggle = true;
-                }
-            });
-            islandUnstableButton.addActionListener(new ActionListener()
+            islandCheckBox.addActionListener(new ActionListener()
             {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent)
                 {
                     if (IslandToggle)
                         IslandToggle = false;
-                    else if (RiverToggle)
-                        RiverToggle = false;
                     else
                         IslandToggle = true;
+                }
+            });
+            riversCheckBox.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent)
+                {
+                    if (RiverToggle)
+                        RiverToggle = false;
+                    else
+                        RiverToggle = true;
                 }
             });
         }
@@ -144,8 +105,19 @@ import java.awt.event.ActionListener;
             frame.setContentPane(new MainForm().RootPanel);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
-            frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            frame.setSize(750, 750);
             frame.setVisible(true);
+        }
+        private static int getRandomNumberInRange(int min, int max)
+        {
+
+            if (min >= max)
+            {
+                throw new IllegalArgumentException("max must be greater than min");
+            }
+
+            Random r = new Random();
+            return r.nextInt((max - min) + 1) + min;
         }
 
     }
