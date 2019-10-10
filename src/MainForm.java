@@ -23,6 +23,7 @@ public class MainForm
         private JSlider ZoomSlider;
         private JLabel TitleLabel;
         private JTextArea SeedEnter;
+        private JButton randomButton;
 
         public static boolean IslandToggle = false;
         public static double MapZoom = 124;
@@ -41,11 +42,17 @@ public class MainForm
                 {
                     JFrame frame1 = new JFrame("imageForm");
                     frame1.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                    if (seed != 0)
+                    int result = Integer.parseInt(SeedEnter.getText());
+                    seed = result;
+                    //seed = getRandomNumberInRange(42, 69696969);
+                    Island.DrawRiver = false;
+                    if (RiverToggle && IslandToggle)
                     {
-                        seed = getRandomNumberInRange(42, 69696969);
+                        Island.DrawRiver = true;
+                        frame1.add(new Island());
+                        frame1.setVisible(true);
                     }
-                    if (RiverToggle)
+                    else if (RiverToggle)
                     {
                         frame1.add(new RiverTest());
                         frame1.setVisible(true);
@@ -95,6 +102,14 @@ public class MainForm
                         RiverToggle = false;
                     else
                         RiverToggle = true;
+                }
+            });
+            randomButton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent)
+                {
+                    SeedEnter.setText(Integer.toString(getRandomNumberInRange(69, 42424242)));
                 }
             });
         }

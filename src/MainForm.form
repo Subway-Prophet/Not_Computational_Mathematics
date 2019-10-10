@@ -37,7 +37,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Enter Seed"/>
+          <text value="Seed"/>
         </properties>
       </component>
       <component id="8a356" class="javax.swing.JLabel">
@@ -70,6 +70,14 @@
         </constraints>
         <properties>
           <text value="Rivers"/>
+        </properties>
+      </component>
+      <component id="23306" class="javax.swing.JButton" binding="randomButton">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Random"/>
         </properties>
       </component>
     </children>
