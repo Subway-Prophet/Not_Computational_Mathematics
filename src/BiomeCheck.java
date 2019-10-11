@@ -4,6 +4,7 @@ public class BiomeCheck
     public static double SeaLevel = 0.1;
         public static int CheckBiome(Double elevation)
         {
+            //Tree houses are overrated anyway.
             if (elevation < SeaLevel)
                 return 0;
             else if (elevation < SeaLevel + .02)

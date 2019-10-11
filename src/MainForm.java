@@ -6,17 +6,8 @@ import java.util.Random;
 
 public class MainForm
     {
-        private JPanel RootPanel;
+        private JPanel RootPanel; //
         private JButton generateMapButton;
-        private JButton closeZoomButton;
-        private JButton midZoomButton;
-        private JButton farZoomButton;
-        private JButton LowSeaButton;
-        private JButton oopsGlobalWarmingButton;
-        private JButton defaultSeaLevelButton;
-        private JButton islandUnstableButton;
-        private JButton button5;
-        private JButton lavaButton;
         private JCheckBox islandCheckBox;
         private JCheckBox riversCheckBox;
         private JCheckBox lavaCheckBox;
@@ -24,6 +15,11 @@ public class MainForm
         private JLabel TitleLabel;
         private JTextArea SeedEnter;
         private JButton randomButton;
+        private JSlider slider1;
+        private JCheckBox settlementsCheckBox;
+        private JCheckBox namesCheckBox;
+        private JCheckBox nationsCheckBox;
+        private JCheckBox gradiantsCheckBox;
 
         public static boolean IslandToggle = false;
         public static double MapZoom = 124;
@@ -59,7 +55,7 @@ public class MainForm
                     }
                     else if (IslandToggle)
                     {
-                        frame1.add(new Island());
+                        frame1.add(new Island()); //Islands in the stream, that is what we are.
                         frame1.setVisible(true);
                     }
                     else
@@ -128,11 +124,11 @@ public class MainForm
 
             if (min >= max)
             {
-                throw new IllegalArgumentException("max must be greater than min");
+                throw new IllegalArgumentException("max must be greater than min"); //I don't ever want to feel like I did that day
             }
 
             Random r = new Random();
-            return r.nextInt((max - min) + 1) + min;
+            return r.nextInt((max - min) + 1) + min; //Take me to the place I love, take me all the way
         }
 
     }

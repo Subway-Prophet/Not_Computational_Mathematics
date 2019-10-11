@@ -380,6 +380,8 @@ public class JungleTerrain extends JPanel
                     }
                     else if (BiomeCheck.CheckBiome(elevation) == 14)
                     {
+                        //The Gods are angry at me for my insolence.
+                        //The Gods are right to be afraid, for I have crafted a world
                         int rgb = 0xA0A0A0;
                         Color Blue2 = new Color(rgb);
                         g2d.setColor(Blue2);//sets color
